@@ -1,5 +1,5 @@
-resource_group_name = "rg-linuxserver"
-location = "East US"
+resource_group_name = "rg-linux-apache-webapp"
+location = "Central India"
 virtual_network_name = "vnet-webapp"
 virtual_network_address_space = "10.0.0.0/16"
 subnet_name = "sub-webapp"
@@ -25,6 +25,6 @@ security_rule = [ {
     access                     = "Allow"
     destination_port_range     = "80"
     } ]
-    public_ip_name = "Apache_host_IP"
+    public_ip_name = "Linux_server_IP"
 
   
