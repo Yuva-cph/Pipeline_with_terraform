@@ -10,10 +10,10 @@ terraform {
     }
     }
 backend "azurerm"{
-    resource_group_name="tfstate-grp"
-    storage_account_name="tfstategroup2025"
-    container_name="statefile6"
-    key="testterraform.tfstate"
+    resource_group_name= var.bkstrRgp
+    storage_account_name= var.bkstrsa
+    container_name= var.bkcontainer
+    key=var.bkkey
 }
 
 }
