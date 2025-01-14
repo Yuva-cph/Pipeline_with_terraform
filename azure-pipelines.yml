@@ -60,12 +60,11 @@ stages:
               backendAzureRmStorageAccountName: '$(bkstrsa)'
               backendAzureRmContainerName: '$(bkcontainer)'
               backendAzureRmKey: '$(bkkey)'
- 
           - task: TerraformTaskV4@4
-            displayName: Terraform Plan
             inputs:
               provider: 'azurerm'
               command: 'plan'
+              commandOptions: -input=false 
               environmentServiceNameAzureRM: 'terraformTestServiceConnection'
           - task: TerraformTaskV4@4
             displayName: Terraform apply
