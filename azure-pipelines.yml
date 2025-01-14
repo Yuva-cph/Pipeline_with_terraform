@@ -10,11 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  -group: terraformsecret
-  bkstrRgp: 'tfstate-grp'
-  bkstrsa: 'tfstategroup2025'
-  bkcontainer: 'tfstatefile'
-  bkkey: 'terraform.tfstate'
+  - group: terraformsecret
+  - name: bkstrRgp
+    value: 'tfstate-grp'
+  - name: bkstrsa
+    value: 'tfstategroup2025'
+  - name: bkcontainer
+    value: 'tfstatefile'
+  - name: bkkey
+    value: 'terraform.tfstate'
+
 
 stages:
   - stage: tfvalidate
