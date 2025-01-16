@@ -1,4 +1,4 @@
-resource_group_name = "rg-linux-apache-webapp"
+resource_group_name = "rg-la-webapp"
 location = "Central India"
 virtual_network_name = "vnet-webapp"
 virtual_network_address_space = "10.0.0.0/16"
