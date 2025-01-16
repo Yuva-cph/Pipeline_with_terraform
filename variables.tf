@@ -1,6 +1,6 @@
 
 #variables defined in pipeline
-variable "bkstrRgp"{
+/*variable "bkstrRgp"{
   type=string
   description="backend state file resource group name"
 }
@@ -15,7 +15,7 @@ variable "bkcontainer"{
 variable "bkkey"{
   type=string
   description="backend state file blob name"
-}
+}*/
 
 
 #variables defined in terraform code
