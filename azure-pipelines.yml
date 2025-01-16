@@ -18,7 +18,7 @@ variables:
   - name: bkcontainer
     value: 'tfstatefile'
   - name: bkkey
-    value: 'newwterraform.tfstate'
+    value: 'newtf.tfstate'
 
 
 stages:
@@ -89,4 +89,5 @@ stages:
               provider: 'azurerm'
               command: 'apply'
               environmentServiceNameAzureRM: 'terraformTestServiceConnection'
+              commandOptions: '-input=false -var client_secret=$(client_secret)'
           
