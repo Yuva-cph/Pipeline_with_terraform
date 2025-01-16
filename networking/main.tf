@@ -64,7 +64,7 @@ resource "azurerm_public_ip" "Linux_publicIP" {
   resource_group_name = var.resource_group_name
   location = var.location
   allocation_method = "Static"
-  domain_name_label = "apacheserverusingpip"
+  domain_name_label = "apacheserverusingpip${random_integer.ipnamesuffix.result}"
   depends_on = [ azurerm_resource_group.hostgrp ]
 }
 
