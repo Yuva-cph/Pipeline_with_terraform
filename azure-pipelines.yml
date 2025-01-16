@@ -16,9 +16,9 @@ variables:
   - name: bkstrsa
     value: 'tfstategroup2025'
   - name: bkcontainer
-    value: 'tfstatefile'
+    value: 'statefile7'
   - name: bkkey
-    value: 'newtfmjanu.tfstate'
+    value: 'terraform.tfstate'
 
 
 stages:
@@ -36,7 +36,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'terraformTestServiceConnection'
+              backendServiceArm: 'test'
               backendAzureRmResourceGroupName: '$(bkstrRgp)'
               backendAzureRmStorageAccountName: '$(bkstrsa)'
               backendAzureRmContainerName: '$(bkcontainer)'
@@ -61,7 +61,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'terraformTestServiceConnection'
+              backendServiceArm: 'test'
               backendAzureRmResourceGroupName: '$(bkstrRgp)'
               backendAzureRmStorageAccountName: '$(bkstrsa)'
               backendAzureRmContainerName: '$(bkcontainer)'
@@ -72,7 +72,7 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               commandOptions: '-input=false -var client_secret=$(client_secret)'
-              environmentServiceNameAzureRM: 'terraformTestServiceConnection'
+              environmentServiceNameAzureRM: 'test'
             env:
               TF_VAR_client_secret: '$(client_secret)'
               TF_LOG: 'DEBUG'
@@ -88,6 +88,6 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'apply'
-              environmentServiceNameAzureRM: 'terraformTestServiceConnection'
+              environmentServiceNameAzureRM: 'test'
               commandOptions: '-input=false -var client_secret=$(client_secret)'
           
