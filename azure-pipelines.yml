@@ -18,7 +18,7 @@ variables:
   - name: bkcontainer
     value: 'statefile7'
   - name: bkkey
-    value: 'terraform.tfstate'
+    value: 'testterraform.tfstate'
 
 
 stages:
