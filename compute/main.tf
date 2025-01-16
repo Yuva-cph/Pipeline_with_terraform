@@ -87,11 +87,11 @@ depends_on = [ azurerm_linux_virtual_machine.linuxvm ]
 resource "null_resource" "serviceconf" {
     provisioner "file" {
     source      = "./compute/webapplication/"  # Local path to your web application
-    destination = "/tmp/webapp/"              # Temporary directory on VM
+    destination = "/tmp/"              # Temporary directory on VM
   }
   provisioner "remote-exec" {
     inline = [ 
-        "sudo cp -r /tmp/webapp/* /var/www/html/", 
+        "sudo cp -r /tmp/* /var/www/html/", 
         "sudo chown -R adminuser:adminuser /var/www/html/", 
     "echo '[Unit]\n  Description=Simple ASP.NET Core Application\n  [Service]\n WorkingDirectory=/var/www/html\n ExecStart=/usr/bin/dotnet /var/www/html/WebApplication1.dll\n Restart=on-failure\n  RestartSec=10\n SyslogIdentifier=dotnet-webapplication\n User=adminuser\n Environment=ASPNETCORE_ENVIRONMENT=Production\n [Install]\n WantedBy=multi-user.target' | sudo tee /etc/systemd/system/webapp.service",
          # Reload systemd to apply the new service
