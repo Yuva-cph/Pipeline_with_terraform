@@ -74,10 +74,10 @@ variable "virtual_machine_name" {
 }
 
 
-variable "client_secret" {
+/*variable "client_secret" {
   type=string
   description = "client-secret"
   sensitive = true
-}
+}*/
 
 
