@@ -18,7 +18,7 @@ variables:
   - name: bkcontainer
     value: 'tfstatefile'
   - name: bkkey
-    value: 'terraform.tfstate'
+    value: 'strterraform.tfstate'
 
 
 stages:
@@ -70,8 +70,10 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'plan'
-              commandOptions: -input=false 
+              commandOptions: -input=false '-var client_secret=$(TF_VAR_client_secret)'
               environmentServiceNameAzureRM: 'terraformTestServiceConnection'
+            env:
+              TF_VAR_client_secret: '$(TF_VAR_client_secret)'
           - task: TerraformTaskV4@4
             displayName: Terraform apply
             inputs:
