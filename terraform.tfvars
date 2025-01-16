@@ -25,6 +25,6 @@ security_rule = [ {
     access                     = "Allow"
     destination_port_range     = "80"
     } ]
-    public_ip_name = "Linux_server_IP"
+    public_ip_name = "pipe-serverip"
 
   
