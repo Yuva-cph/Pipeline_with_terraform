@@ -10,12 +10,3 @@ output "clientsecret" {
     value = azurerm_key_vault_secret.clientsecret.value
  
 }
-/*output "clientid-value" {
-    value = azurerm_key_vault_secret.clientid.value
- 
-}
-
-output "tenantid-value" {
-    value = azurerm_key_vault_secret.tenantid.value
- 
-}*/
