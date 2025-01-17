@@ -73,16 +73,7 @@ stages:
               command: 'plan'
               commandOptions: '-input=false -var client_secret=$(client_secret)'
               environmentServiceNameAzureRM: 'test'
-            env:
-              TF_VAR_client_secret: '$(client_secret)'
-              TF_LOG: 'DEBUG'
-          - task: Bash@3
-            displayName: 'Debug client_secret variable'
-            inputs:
-              targetType: 'inline'
-              script: |
-                echo "client_secret: $(client_secret)"
-
+            
           - task: TerraformTaskV4@4
             displayName: Terraform apply
             inputs:
