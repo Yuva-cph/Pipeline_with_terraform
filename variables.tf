@@ -1,23 +1,4 @@
 
-#variables defined in pipeline
-/*variable "bkstrRgp"{
-  type=string
-  description="backend state file resource group name"
-}
-variable "bkstrsa"{
-  type=string
-  description="backend state file storage account name"
-}
-variable "bkcontainer"{
-  type=string
-  description="backend state file container name"
-}
-variable "bkkey"{
-  type=string
-  description="backend state file blob name"
-}*/
-
-
 #variables defined in terraform code
 variable "resource_group_name" {
   type=string
@@ -72,7 +53,6 @@ variable "virtual_machine_name" {
     type = string
     description = "name of the linux virtual machine"
 }
-
 
 variable "client_secret" {
   type=string
