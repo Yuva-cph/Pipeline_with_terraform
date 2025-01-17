@@ -40,19 +40,6 @@ resource "azurerm_key_vault_secret" "vmpassword" {
     key_vault_id = azurerm_key_vault.vault-webapp.id
     depends_on = [ azurerm_key_vault.vault-webapp ]
 }
-/*
-resource "azurerm_key_vault_secret" "tenantid" {
-    name="tenantid"
-    value = data.azurerm_client_config.current.tenant_id
-    key_vault_id = azurerm_key_vault.vault-webapp.id
-    depends_on = [ azurerm_key_vault.vault-webapp ]
-}
-resource "azurerm_key_vault_secret" "clientid" {
-    name="clientid-tf"
-    value = data.azurerm_client_config.current.client_id
-    key_vault_id = azurerm_key_vault.vault-webapp.id
-    depends_on = [ azurerm_key_vault.vault-webapp ]
-}*/
 
 resource "azurerm_key_vault_secret" "clientsecret" {
     name="clientsecret-tf"
