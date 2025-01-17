@@ -1,4 +1,4 @@
-# modified_tfcode_usecase
+
 # Deploying simple ASP.NET core web application on Linux virtual machine with Apache server
 
 Azure Resources created on this usecase
